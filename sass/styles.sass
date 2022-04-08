@@ -324,6 +324,69 @@ ul
         text-transform: capitalize
         margin: 0 0 15px
 
+// Fun Facts
+.fun-fact
+  padding: 40px 0
+
+  &__item
+    grid-column: span 3
+    margin: 40px 0
+
+    &:nth-child(1) .fun-fact__box::before,
+    &:nth-child(1) .fun-fact__box::after
+      background-color: var(--light-red)
+
+    &:nth-child(2) .fun-fact__box::before,
+    &:nth-child(2) .fun-fact__box::after,
+    &:nth-child(4) .fun-fact__box::before,
+    &:nth-child(4) .fun-fact__box::after
+      background-color: var(--main-color)
+
+    &:nth-child(3) .fun-fact__box::before,
+    &:nth-child(3) .fun-fact__box::after
+      background-color: var(--light-yellow)
+
+    h2
+      font-size: 35px
+
+    p
+      text-transform: capitalize
+
+  &__box
+    width: 160px
+    height: 160px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: relative
+    z-index: 1
+    margin: auto
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      -webkit-border-radius: 20%
+      -moz-border-radius: 20%
+      border-radius: 20%
+
+    &::before
+      -ms-transform: rotate(22deg)
+      transform: rotate(22deg)
+      opacity: .3
+      z-index: -2
+
+    &::after
+      -ms-transform: rotate(45deg)
+      transform: rotate(45deg)
+      opacity: .5
+      z-index: -1
+
 
 
 
