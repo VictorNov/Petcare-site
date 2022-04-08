@@ -83,7 +83,7 @@ ul
   &-title
     font-size: 18px
     font-weight: 500
-    text-transform: capitalize
+    text-transform: uppercase
     color: var(--main-color)
     text-align: center
     margin-bottom: 8px
@@ -389,7 +389,105 @@ ul
 
 
 
+// Pricing
+.pricing
+  &__item
+    grid-column: span 4
+    background-color: var(--white-alpha-40)
+    padding: 30px
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
+    border-radius: 8px
+    -webkit-box-shadow:  0 0 10px var(--shadow-color)
+    -moz-box-shadow:  0 0 10px var(--shadow-color)
+    box-shadow:  0 0 10px var(--shadow-color)
 
+    &.pricing-1 .pricing__header h3::before,
+    &.pricing-1 .pricing__header .price,
+    &.pricing-1 .fa-check-circle
+      color: var(--light-red)
+
+    &.pricing-1 .pricing__footer .btn--pricing
+      background-color: var(--light-red)
+
+    &.pricing-2 .pricing__header h3::before,
+    &.pricing-2 .pricing__header .price,
+    &.pricing-2 .fa-check-circle
+      color: var(--main-color)
+
+    &.pricing-2 .pricing__footer .btn--pricing
+      background-color: var(--main-color)
+
+    &.pricing-3 .pricing__header h3::before,
+    &.pricing-3 .pricing__header .price,
+    &.pricing-3 .fa-check-circle
+      color: var(--light-yellow)
+
+    &.pricing-3 .pricing__footer .btn--pricing
+      background-color: var(--light-yellow)
+
+    &:hover .pricing__header h3 span,
+    &:hover .pricing__header h3::before
+      -ms-transform: translateY(100%)
+      transform: translateY(100%)
+
+  &__header
+    border-bottom: 1px solid var(--border-color-1)
+
+    h3
+      font-size: 24px
+      text-transform: capitalize
+      position: relative
+      overflow: hidden
+
+      span
+        display: block
+        -webkit-transition: transform .5s ease
+        -moz-transition: transform .5s ease
+        -ms-transition: transform .5s ease
+        -o-transition: transform .5s ease
+        transition: transform .5s ease
+
+      &::before
+        content: attr(data-text)
+        position: absolute
+        left: 0
+        bottom: 100%
+        -webkit-transition: transform .5s ease
+        -moz-transition: transform .5s ease
+        -ms-transition: transform .5s ease
+        -o-transition: transform .5s ease
+        transition: transform .5s ease
+
+    .price
+      font-size: 35px
+      display: flex
+      align-items: center
+      font-weight: bold
+      margin-top: 10px
+      padding-bottom: 5px
+
+      span
+        font-size: 16px
+        margin-left: 10px
+        font-weight: 300
+
+  &__body
+    padding: 15px 0 20px
+    border-bottom: 1px solid var(--border-color-1)
+
+    li
+      margin-bottom: 6px
+      padding-left: 25px
+      position: relative
+
+      i
+        position: absolute
+        left: 0
+        top: 5px
+
+  &__footer
+    padding-top: 20px
 
 
 
