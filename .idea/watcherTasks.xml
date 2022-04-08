@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="-P $FileName$ -o $FileDirRelativeToProjectRoot$/dist" />
+      <option name="arguments" value="-P index.pug -o $FileDirRelativeToProjectRoot$/dist" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />
