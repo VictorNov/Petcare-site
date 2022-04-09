@@ -63,6 +63,15 @@ ul
   color: var(--white)
   background-color: var(--main-color)
 
+\::-webkit-scrollbar
+  width: 5px
+
+\::-webkit-scrollbar-track
+  background-color: var(--body-bg-color)
+
+\::-webkit-scrollbar-thumb
+  background-color: var(--main-color)
+
 // Container
 .container
   max-width: 1170px
@@ -634,6 +643,68 @@ textarea.input-control
       -webkit-box-shadow: 0 0 10px var(--shadow-color)
       -moz-box-shadow: 0 0 10px var(--shadow-color)
       box-shadow: 0 0 10px var(--shadow-color)
+
+// Footer
+.footer
+  position: relative
+  z-index: 1
+  overflow: hidden
+
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 200px
+    height: 200px
+    background-color: var(--light-red)
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    -ms-transform: translate(50%, 50%)
+    transform: translate(50%, 50%)
+    z-index: -1
+
+  &__top
+    padding: 60px 0
+    border-top: 1px solid var(--border-color-2)
+
+  &__content
+    grid-column: span 4
+
+    ul
+      li
+        margin-bottom: 6px
+
+      a
+        display: inline-block
+        color: var(--black-70)
+        text-transform: capitalize
+        -webkit-transition: color .3s ease
+        -moz-transition: color .3s ease
+        -ms-transition: color .3s ease
+        -o-transition: color .3s ease
+        transition: color .3s ease
+
+        &:hover
+          color: var(--main-color)
+
+  &__title
+    text-transform: capitalize
+    margin: 0 0 15px
+
+  &__bottom
+    border-top: 1px solid var(--border-color-2)
+    padding: 20px 0
+    text-align: center
+
+
+
+
+
+
+
+
 
 
 
