@@ -97,6 +97,9 @@ ul
     margin: 0 0 40px
 
 // Buttons
+button
+  cursor: pointer
+
 .btn
   display: inline-block
   padding: 10px 28px
@@ -158,6 +161,29 @@ ul
     -webkit-animation: spin 2s linear infinite
     -o-animation: spin 2s linear infinite
     animation: spin 2s linear infinite
+
+// Стили форм
+.input-box
+  margin-bottom: 20px
+
+.input-control
+  display: block
+  width: 100%
+  height: 42px
+  background-color: transparent
+  outline: none
+  border: none
+  border-bottom: 1px solid var(--border-color-1)
+  font: inherit
+  font-weight: 500
+  font-size: 16px
+  color: var(--black-90)
+  &::placeholder
+    color: var(--black-70)
+
+textarea.input-control
+  height: 120px
+  resize: none
 
 // Fancy border radius box
 .fancy-br-box
@@ -489,8 +515,125 @@ ul
   &__footer
     padding-top: 20px
 
+// Contact
+.contact
+  overflow: hidden
 
+  &__details,
+  &__form
+    grid-column: span 6
+    position: relative
 
+  .section-subtitle
+    text-align: left
+    margin-bottom: 15px
+
+  &__text-1
+    margin-bottom: 40px
+
+  &__info-item
+    position: relative
+    margin-bottom: 10px
+    padding-left: 30px
+
+    i
+      position: absolute
+      left: 0
+      top: 7px
+      font-size: 14px
+
+  &__social-links
+    margin-top: 25px
+
+    a
+      height: 35px
+      width: 35px
+      color: var(--main-color)
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      border: 1px solid var(--main-color)
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+      margin-right: 5px
+      -webkit-transition: color .3s ease
+      -moz-transition: color .3s ease
+      -ms-transition: color .3s ease
+      -o-transition: color .3s ease
+      transition: color .3s ease
+      position: relative
+      z-index: 1
+
+      &:hover
+        color: var(--white)
+        border-color: transparent
+
+        &::after
+          -ms-transform: scale(1)
+          transform: scale(1)
+
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        width: 100%
+        background-color: var(--main-color)
+        -webkit-border-radius: 50%
+        -moz-border-radius: 50%
+        border-radius: 50%
+        z-index: -1
+        -ms-transform: scale(0)
+        transform: scale(0)
+        -webkit-transition: transform .3s ease
+        -moz-transition: transform .3s ease
+        -ms-transition: transform .3s ease
+        -o-transition: transform .3s ease
+        transition: transform .3s ease
+
+  &__form
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+
+    &::before
+      right: -4px
+      top: 0
+      height: 40px
+      width: 40px
+      background-color: var(--light-red)
+      z-index: -1
+      -ms-transform: rotate(10deg)
+      transform: rotate(10deg)
+
+    &::after
+      left: -15px
+      bottom: 0
+      height: 20px
+      width: 20px
+      background-color: var(--main-color)
+      z-index: 1
+      -ms-transform: rotate(10deg)
+      transform: rotate(10deg)
+
+    .icon-box
+      width: 120px
+      -webkit-animation: moveX 4s linear infinite
+      -o-animation: moveX 4s linear infinite
+      animation: moveX 4s linear infinite
+
+    &-box
+      background-color: var(--white-alpha-40)
+      padding: 50px
+      -webkit-border-radius: 30px
+      -moz-border-radius: 30px
+      border-radius: 30px
+      -webkit-box-shadow: 0 0 10px var(--shadow-color)
+      -moz-box-shadow: 0 0 10px var(--shadow-color)
+      box-shadow: 0 0 10px var(--shadow-color)
 
 
 
