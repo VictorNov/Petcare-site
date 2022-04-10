@@ -32,3 +32,46 @@ window.addEventListener('scroll', () => {
     header.classList.remove('header-visible')
   }
 })
+
+// Theme switcher
+function themeSwitcher() {
+  const switcherBtn = document.getElementById('switcher-btn')
+  const icon = switcherBtn.querySelector('i')
+
+  function changeIcon() {
+    if (document.body.classList.contains('dark-theme')) {
+      icon.classList.remove('fa-moon')
+      icon.classList.add('fa-sun')
+    } else {
+      icon.classList.add('fa-moon')
+      icon.classList.remove('fa-sun')
+    }
+  }
+
+  switcherBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme')
+    changeIcon()
+
+    if(document.body.classList.contains('dark-theme')) {
+      localStorage.setItem('theme', 'dark-theme')
+    } else {
+      localStorage.setItem('theme', 'light-theme')
+    }
+  })
+
+  function getCurrentTheme() {
+    if (selectedTheme === 'dark-theme') {
+      document.body.classList.add('dark-theme')
+    } else {
+      document.body.classList.remove('dark-theme')
+    }
+  }
+
+  const selectedTheme = localStorage.getItem('theme')
+  if (selectedTheme) {
+    getCurrentTheme()
+  }
+  changeIcon()
+}
+
+themeSwitcher()

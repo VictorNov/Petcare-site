@@ -16,6 +16,16 @@
   --border-color-2: hsla(44, 45%, 73%, .4)
   --shadow-color: hsl(42, 45%, 73%)
 
+// Переменные темной темы
+body.dark-theme
+  --body-bg-color: hsl(258, 14%, 18%)
+  --white-alpha-40: hsla(0, 0%, 100%, .05)
+  --black-90: hsl(0, 0%, 100%)
+  --black-70: hsla(0, 0%, 100%, .7)
+  --border-color-1: hsla(0, 0%, 100%, .12)
+  --border-color-2: hsla(0, 0%, 100%, .05)
+  --shadow-color: hsla(0, 0%, 0%, .15)
+
 // Базовые настройки
 *
   -webkit-box-sizing: border-box
@@ -23,13 +33,15 @@
   box-sizing: border-box
   margin: 0
   padding: 0
-  scroll-behavior: smooth
 
 \::before,
 \::after
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
+
+html
+  scroll-behavior: smooth
 
 body
   font-family: 'Poppins', sans-serif
@@ -222,6 +234,45 @@ textarea.input-control
   -webkit-border-radius: 30% 70% 50% 50% / 50%
   -moz-border-radius: 30% 70% 50% 50% / 50%
   border-radius: 30% 70% 50% 50% / 50%
+
+// Theme switcher
+.switcher-btn
+  height: 40px
+  width: 40px
+  position: fixed
+  right: 0
+  bottom: 0
+  color: var(--black-90)
+  z-index: 3
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+  border: none
+  background-color: transparent
+
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    background-color: var(--main-color)
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    z-index: -1
+    -webkit-transition: transform .3s ease
+    -moz-transition: transform .3s ease
+    -ms-transition: transform .3s ease
+    -o-transition: transform .3s ease
+    transition: transform .3s ease
+    -ms-transform: scale(0)
+    transform: scale(0)
+
+  &:hover::before
+    -ms-transform: scale(1)
+    transform: scale(1)
 
 // Animations
 @keyframes moveX
