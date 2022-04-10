@@ -209,8 +209,8 @@ textarea.input-control
 
 // Fancy border radius box
 .fancy-br-box
-  height: 400px
-  width: 400px
+  height: auto
+  max-width: 400px
   margin: auto
   position: relative
   z-index: 1
@@ -919,6 +919,85 @@ textarea.input-control
     padding: 20px 0
     text-align: center
 
+// Media queries
+@media screen and (max-width: 1199px)
+  .container
+    padding: 0 30px
+
+@media screen and (max-width: 991px)
+  .home__text h1
+    font-size: 35px
+  .section-subtitle
+    font-size: 32px
+  .services__item
+    flex-direction: column
+    align-items: center
+    text-align: center
+  .services__item-img
+    margin-bottom: 20px
+  .services__item-text
+    padding-left: 0
+  .fun-fact__item
+    grid-column: span 6
+  .pricing__item
+    grid-column: span 6
+  .contact__form-box
+    padding: 30px
+  .footer__content
+    grid-column: span 6
+    &:first-child
+      grid-column: span 8
+
+@media screen and (max-width: 767px)
+  .container
+    padding: 0 15px
+  .section
+    padding-top: 20px
+  .home
+    padding-top: 140px
+  .home__img,
+  .home__text,
+  .about__img,
+  .about__text,
+  .services__item,
+  .pricing__item,
+  .contact__details,
+  .contact__form,
+  .footer__content
+    grid-column: span 12
+  .home__img,
+  .about__img
+    order: -1
+    margin-bottom: 60px
+  .contact__details
+    margin-bottom: 40px
+
+@media screen and (max-width: 575px)
+  .row
+    -webkit-column-gap: 0
+    -moz-column-gap: 0
+    grid-gap: 15px
+  .fun-fact__item
+    grid-column: span 12
+  .fun-fact__box
+    width: 130px
+    height: 130px
+    h2
+      font-size: 26px
+  .section-subtitle
+    font-size: 26px
+  .home__text h1
+    font-size: 26px
+  body
+    font-size: 14px
+  .nav a
+    font-size: 16px
+  .section-title
+    font-size: 16px
+  .section-subtitle
+    font-size: 20px
+  .contact__form-box
+    padding: 15px
 
 
 
