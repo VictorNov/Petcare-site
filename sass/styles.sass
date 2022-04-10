@@ -23,6 +23,7 @@
   box-sizing: border-box
   margin: 0
   padding: 0
+  scroll-behavior: smooth
 
 \::before,
 \::after
@@ -247,11 +248,25 @@ textarea.input-control
   width: 100%
   z-index: 100
   padding: 8px 0
+  -webkit-transition: .3s ease
+  -moz-transition: .3s ease
+  -ms-transition: .3s ease
+  -o-transition: .3s ease
+  transition: .3s ease
+
+  &.header-visible
+    background-color: var(--white-alpha-40)
+    backdrop-filter: blur(5px)
+    -webkit-box-shadow: 0 0 10px var(--shadow-color)
+    -moz-box-shadow: 0 0 10px var(--shadow-color)
+    box-shadow: 0 0 10px var(--shadow-color)
 
   &__main
     display: flex
     justify-content: space-between
     align-items: center
+    position: relative
+    background-color: transparent
 
   &__logo
     img
@@ -271,6 +286,23 @@ textarea.input-control
     outline: none
     background-color: transparent
 
+    &.active
+      span
+        background-color: transparent
+        &::before,
+        &::after
+          top: 0
+          -webkit-transition-delay: 0s, .2s
+          -moz-transition-delay: 0s, .2s
+          -o-transition-delay: 0s, .2s
+          transition-delay: 0s, .2s
+        &::before
+          -ms-transform: rotate(45deg)
+          transform: rotate(45deg)
+        &::after
+          -ms-transform: rotate(-45deg)
+          transform: rotate(-45deg)
+
     span
       display: block
       height: 2px
@@ -278,6 +310,11 @@ textarea.input-control
       background-color: var(--black-90)
       margin: auto
       position: relative
+      -webkit-transition: background-color .3s ease
+      -moz-transition: background-color .3s ease
+      -ms-transition: background-color .3s ease
+      -o-transition: background-color .3s ease
+      transition: background-color .3s ease
 
       &::before,
       &::after
@@ -288,12 +325,89 @@ textarea.input-control
         background-color: var(--black-90)
         position: absolute
         left: 0
+        -webkit-transition: top .2s ease .2s, transform .2s ease
+        -moz-transition: top .2s ease .2s, transform .2s ease
+        -ms-transition: top .2s ease .2s, transform .2s ease
+        -o-transition: top .2s ease .2s, transform .2s ease
+        transition: top .2s ease .2s, transform .2s ease
 
       &::before
         top: -7px
 
       &::after
-        bottom: -7px
+        top: 7px
+
+  .nav
+    position: absolute
+    right: 0
+    top: 100%
+    margin-top: 13px
+    background-color: var(--white-alpha-40)
+    backdrop-filter: blur(5px)
+    -webkit-backdrop-filter: blur(5px)
+    -webkit-border-radius: 10px
+    -moz-border-radius: 10px
+    border-radius: 10px
+    visibility: hidden
+    opacity: 0
+    -webkit-transition: opacity .5s ease, visibility 0s ease .5s
+    -moz-transition: opacity .5s ease, visibility 0s ease .5s
+    -ms-transition: opacity .5s ease, visibility 0s ease .5s
+    -o-transition: opacity .5s ease, visibility 0s ease .5s
+    transition: opacity .5s ease, visibility 0s ease .5s
+    z-index: 101
+
+    &.active
+      visibility: visible
+      opacity: 1
+      -webkit-transition-delay: 0s
+      -moz-transition-delay: 0s
+      -o-transition-delay: 0s
+      transition-delay: 0s
+      li
+        -ms-transform: translateY(0px)
+        transform: translateY(0px)
+
+    li
+      text-align: center
+      -ms-transform: translateY(20px)
+      transform: translateY(20px)
+      -webkit-transition: transform .5s ease
+      -moz-transition: transform .5s ease
+      -ms-transition: transform .5s ease
+      -o-transition: transform .5s ease
+      transition: transform .5s ease
+      -webkit-transition-delay: calc(.05s * var(--item))
+      -moz-transition-delay: calc(.05s * var(--item))
+      -o-transition-delay: calc(.05s * var(--item))
+      transition-delay: calc(.05s * var(--item))
+
+    a
+      display: block
+      padding: 8px 30px
+      font-weight: 500
+      color: var(--black-90)
+      text-transform: capitalize
+      position: relative
+
+      &::before
+        content: ''
+        height: 2px
+        width: 0
+        position: absolute
+        left: 5px
+        top: 50%
+        -ms-transform: translateY(50%)
+        transform: translateY(-50%)
+        background-color: var(--main-color)
+        -webkit-transition: width .3s ease
+        -moz-transition: width .3s ease
+        -ms-transition: width .3s ease
+        -o-transition: width .3s ease
+        transition: width .3s ease
+
+      &:hover::before
+        width: 12px
 
 // Home
 .home
