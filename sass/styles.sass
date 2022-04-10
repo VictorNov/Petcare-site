@@ -291,6 +291,43 @@ textarea.input-control
     -ms-transform: rotate(360deg)
     transform: rotate(360deg)
 
+@keyframes zoomInOut
+  0%, 100%
+    -ms-transform: scale(1)
+    transform: scale(1)
+  50%
+    -ms-transform: scale(1.1)
+    transform: scale(1.1)
+
+// Preloader
+.preloader
+  position: fixed
+  z-index: 102
+  left: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  background-color: var(--main-color)
+  display: flex
+  justify-content: center
+  align-items: center
+  opacity: 1
+  -webkit-transition: opacity .6s ease
+  -moz-transition: opacity .6s ease
+  -ms-transition: opacity .6s ease
+  -o-transition: opacity .6s ease
+  transition: opacity .6s ease
+
+  &.fade-out
+    opacity: 0
+
+  img
+    display: block
+    width: 50px
+    -webkit-animation: zoomInOut 1s linear infinite
+    -o-animation: zoomInOut 1s linear infinite
+    animation: zoomInOut 1s linear infinite
+
 // Header
 .header
   position: fixed

@@ -1,3 +1,11 @@
+// Preloader
+window.addEventListener('load', () => {
+  document.getElementById('preloader').classList.add('fade-out')
+  setTimeout(() => {
+    document.getElementById('preloader').style.display = 'none'
+  }, 600)
+})
+
 // Nav
 const toggler = document.getElementById('toggle-menu')
 const navMenu = document.getElementById('nav-menu')
