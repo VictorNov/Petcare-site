@@ -2,5 +2,10 @@
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/preset-env": "^7.16.11"
+  },
+  "dependencies": {
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.56.1"
   }
 }
